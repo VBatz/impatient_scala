@@ -6,4 +6,4 @@ val n: Int = readInt()
 
 val randoms = for (i <- 0 until n) yield Random.nextInt(n)
 
-println(randoms +"\n")
+println(randoms.toArray.mkString(", ") +"\n")
