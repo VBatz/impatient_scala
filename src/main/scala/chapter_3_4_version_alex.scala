@@ -6,8 +6,6 @@ println("\nArray in ursprünglicher Reihenfolge: " + a.mkString("(", ", ", ")"))
 
 var positive = -1
 
-val b = ArrayBuffer[Int]()
-
-b ++= a.filter{ _ > 0} ++ a.filter{ _ <= 0}
+val b = a.filter{ _ > 0} ++ a.filter{ _ <= 0}
 
 println("\nArray in neuer Reihenfolge: " + b.mkString("(", ", ", ")") + "\n")
