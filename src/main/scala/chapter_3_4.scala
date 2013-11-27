@@ -2,6 +2,8 @@ import scala.collection.mutable.ArrayBuffer
 
 val a = Array(-2,1,5,-8,-1,0,6,-3,2,1,4,6,8,-2)
 
+println("\nArray in ursprünglicher Reihenfolge: " + a.mkString("(", ", ", ")"))
+
 var positive = -1
 
 val indexes = ArrayBuffer[Int]()
@@ -20,5 +22,4 @@ val b = new Array[Int](a.length)
 
 for (j <- 0 until a.length) b(j) = a(indexes(j))
 
-println("\nArray in ursprünglicher Reihenfolge: " + a.mkString("(", ", ", ")") + "\n")
 println("\nArray in neuer Reihenfolge: " + b.mkString("(", ", ", ")") + "\n")
