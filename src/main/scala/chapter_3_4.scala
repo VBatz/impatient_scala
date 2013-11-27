@@ -6,20 +6,16 @@ println("\nArray in ursprünglicher Reihenfolge: " + a.mkString("(", ", ", ")"))
 
 var positive = -1
 
-val indexes = ArrayBuffer[Int]()
+val b = ArrayBuffer[Int]()
 
 for (i <- 0 until a.length) {
   if (a(i) > 0) {
     positive += 1
-    indexes.insert(positive, i)
+    b.insert(positive, a(i))
   }
   else if (a(i) <= 0) {
-    indexes.insert(indexes.length, i)
+    b.insert(b.length, a(i))
   }
 }
-
-val b = new Array[Int](a.length)
-
-for (j <- 0 until a.length) b(j) = a(indexes(j))
 
 println("\nArray in neuer Reihenfolge: " + b.mkString("(", ", ", ")") + "\n")
