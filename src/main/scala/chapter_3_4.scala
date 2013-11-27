@@ -7,9 +7,6 @@ var positive = -1
 val indexes = ArrayBuffer[Int]()
 
 for (i <- 0 until a.length) {
-//  if (i == 0) {
-//    positive += 1
-//  }
   if (a(i) > 0) {
     positive += 1
     indexes.insert(positive, i)
