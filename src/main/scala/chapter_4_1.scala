@@ -1,5 +1,5 @@
 
-val in = Map[String, Double]("Muetze" -> 20, "Schal" -> 35, "Handschuhe" -> 5, "Schneeschuhe" -> 80)
+val in = Map("Muetze" -> 20.0, "Schal" -> 34.99, "Handschuhe" -> 5.95, "Schneeschuhe" -> 80.78)
 
 val out = for ((k,v) <- in) yield (k, v*0.9)
 
