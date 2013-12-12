@@ -20,7 +20,7 @@ object milesToKilometers extends Conversions {
 
 val anyValue: Double = 10
 
-println(anyValue)
-println(inchesToMeters.convert(anyValue))
-println(gallonsToLiters.convert(anyValue))
-println(milesToKilometers.convert(anyValue))
+println("original value: ".padTo("miles to kilometers: ".length, ' ') + anyValue)
+println("inches to meters: ".padTo("miles to kilometers: ".length, ' ') + inchesToMeters.convert(anyValue))
+println("gallons to liters: ".padTo("miles to kilometers: ".length, ' ') + gallonsToLiters.convert(anyValue))
+println("miles to kilometers: " + milesToKilometers.convert(anyValue))
