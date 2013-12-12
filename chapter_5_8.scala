@@ -19,6 +19,10 @@ class Car(val manufacturer: String, val modelName: String) {
   }
 }
 
-val auto = new Car("Hersteller", "Name", 2013, "TueV")
+val auto = new Car("Hersteller", "Name", 2013, "M-XYZ-987")
 
-println(auto.manufacturer)
+println(auto.manufacturer + " " + auto.modelName + " " + auto.licensePlate + " " + auto.modelYear)
+
+val car = new Car("BMW", "5,25i", 1989)
+
+println(car.manufacturer + " " + car.modelName + " " + car.licensePlate + " " + car.modelYear)
