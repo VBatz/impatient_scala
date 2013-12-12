@@ -1,30 +1,26 @@
+// abstrakte Klasse: override UND ohne override funktioniert
+// Klassennamen fangen immer mit Großbuchstaben an!!!
 
-abstract class Conversions(val description: String) {
-  def convert(): Unit
+abstract class Conversions {
+  def convert(value: Double): Double
+  // abstrakte Methode => keine Implementierung in der Klasse => override nicht nötig
 }
 
-object inchesToMeters extends Conversions("inch") {
-  override def convert() {
-    val valueInchesToMeters = value * 2.5
-    valueInchesToMeters
-  }
+object inchesToMeters extends Conversions {
+  override def convert(value: Double) = value * 2.5
 }
 
-object gallonsToLiters extends Conversions("gallon") {
-  override def convert() {
-    val valueGallonsToLiters = value / 1.249
-    valueGallonsToLiters
-  }
+object gallonsToLiters extends Conversions {
+  override def convert(value: Double) = value / 1.249
 }
 
-object milesToKilometers extends Conversions("mile") {
-  override def convert() {
-    val valueMilesToKilometers = value * 1.23
-    valueMilesToKilometers
-  }
+object milesToKilometers extends Conversions {
+  override def convert(value: Double) = value * 1.23
 }
 
-val inchValue = Conversions("inch")
+val anyValue: Double = 10
 
-println(inchValue)
-println(inchValue.convert())
+println(anyValue)
+println(inchesToMeters.convert(anyValue))
+println(gallonsToLiters.convert(anyValue))
+println(milesToKilometers.convert(anyValue))
