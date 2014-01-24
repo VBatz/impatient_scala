@@ -1,9 +1,9 @@
 
-object PlayingCards extends Enumeration {
-  val Black1 = Value(Pik, ♠)
-  val Black2 = Value(Karo, ♦)
-  val Red1 = Value(Herz, ♥)
-  val Red2 = Value(Kreuz, ♣)
+object PlayingCard extends Enumeration {
+  val Pik = Value("♠")
+  val Karo = Value("♦")
+  val Herz = Value("♥")
+  val Kreuz = Value("♣")
 }
 
-for (i -> 0 until 4) println(PlayingCards(i))
+for (c <- PlayingCard.values) println(c.id + ": " + c)
