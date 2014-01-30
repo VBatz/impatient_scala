@@ -11,10 +11,8 @@ import scala.io.Source
 val source = Source.fromFile("chapter_9_7.txt")
 val tokens = source.mkString.split("\\s+")
 
-//val out = new PrintWriter("chapter_9_7.txt")
-for (w <- tokens) {
-  if (w.matches("""([0-9]+.+[0-9])""")) {
-  } else println(w)
-}
-//out.close()
+//for (w <- tokens) {
+//  if (!w.matches("""([0-9]+.+[0-9])""")) println(w)
+//}
 
+tokens.filterNot(_.matches("""([0-9]+.+[0-9])""")).foreach(println)

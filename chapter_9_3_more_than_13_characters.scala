@@ -2,9 +2,9 @@
 
 import scala.io.Source
 
-val source = Source.fromFile("chapter_9_2.rtf")
+val source = Source.fromFile("chapter_9_3.txt")
 
-val words = source.mkString.split("\\s+").filter(w => w.length > 12)
+val words = source.mkString.split("\\s+").filter(w => w.length > 12) //oder filter(_.length >12)
 
-println(words.toString)
+println(words.mkString(", "))
 

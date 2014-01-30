@@ -1,11 +1,20 @@
 
 import java.io.File
 
-def subdirs(dir: File): Iterator[File] = {
-  val children = dir.listFiles.filter(_.isDirectory)
-  children.toIterator ++ children.toIterator.flatMap(subdirs _)
+def isScalaSourceFile(child: File): Boolean = {
+  child.getName.matches("""[a-z0-9_]+.scala""")
 }
 
-for (d <- subdirs("impatient_scala")) {
-  if (d.matches("""[a-z0-9_]+.scala""")) println(d)
+def findFiles(dir: File) {
+  for (child <- dir.listFiles) {
+    if (child.isFile) {
+      if (isScalaSourceFile(child)) {
+        println(child.getAbsolutePath)
+      }
+    } else {
+      findFiles(child)
+    }
+  }
 }
+
+findFiles(new File("."))

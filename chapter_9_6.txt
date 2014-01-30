@@ -1,1 +1,1 @@
-This is a "string" that will be highlighted when your regular "expression" matches something.
+This is a "string" that will be highlighted when your regular "expr,ession" matches something.
