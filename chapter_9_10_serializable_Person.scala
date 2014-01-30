@@ -8,6 +8,7 @@ val fred = new Person()
 val john = new Person()
 val jane = new Person()
 val june = new Person()
+
 import java.io._
 
 val out = new ObjectOutputStream(new FileOutputStream("chapter_9_10.obj"))
