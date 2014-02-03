@@ -17,19 +17,19 @@ class Person(val name: String) extends Serializable {
 val fred = new Person("Fred")
 val john = new Person("John")
 val jane = new Person("Jane")
-val june = new Person("June")
+val mary = new Person("Mary")
 
 fred.getFriends(john)
 
 john.getFriends(fred)
-john.getFriends(june)
+john.getFriends(mary)
 
-june.getFriends(john)
-june.getFriends(jane)
+mary.getFriends(john)
+mary.getFriends(jane)
 
 john.currentFriends
 
-val allMyPersons = Array[Person](john, fred, jane, june)
+val allMyPersons = Array[Person](john, fred, jane, mary)
 
 import java.io._
 
