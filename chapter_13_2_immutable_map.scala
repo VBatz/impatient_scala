@@ -1,32 +1,37 @@
 
 
 import scala.collection.immutable.Map
+import scala.collection.mutable.LinkedList
 
 val input = "Mississippi"
 
 var charCounter = 0
-var charIndexes = Map[Char, Set[Int]]()
+var charIndexes = Map[Char, LinkedList[Int]]()
+var charList = LinkedList[Int]()
 
 for (c <- input) {
   if (charIndexes.contains(c)) {
-    charIndexes = charIndexes + (c -> (charIndexes(c) + charCounter))
+    charList = charIndexes(c) :+ charCounter
   } else {
-    charIndexes = charIndexes + (c -> Set(charCounter))
+    charList = LinkedList(charCounter)
   }
+  charIndexes = charIndexes + (c -> charList)
   charCounter += 1
 }
 
 println(charIndexes.mkString("(", ", ", ")"))
 
 val indexes = input.zipWithIndex
-var indexMap = Map[Char, Set[Int]]()
+var indexMap = Map[Char, LinkedList[Int]]()
+var indexList = LinkedList[Int]()
 
 for ((c, n) <- indexes) {
   if (indexMap.contains(c)) {
-    indexMap = indexMap + (c -> (indexMap(c) + n))
+    indexList = indexMap(c) :+ n
   } else {
-    indexMap = indexMap + (c -> Set(n))
+    indexList = LinkedList(n)
   }
+  indexMap = indexMap + (c -> indexList)
 }
 
 println(indexMap.mkString("(", ", ", ")"))
