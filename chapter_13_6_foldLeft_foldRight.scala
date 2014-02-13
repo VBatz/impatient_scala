@@ -1,7 +1,7 @@
 
-val lst = List[Int](1, 2, 6, 8, 4, 9, 4, 5)
+val lst = List[Int](1, 2, 3, 4, 5)
 
-val rightFolded = (lst :\ List[Int]())(_ :: _)
+val rightFolded = (lst :\ List[Int]())(_ +: _).reverse
 
 val leftFolded = (List[Int]() /: lst)(_ :+ _)
 

@@ -1,17 +1,18 @@
 
 
 import scala.collection.mutable.Map
+import scala.collection.immutable.SortedSet
 
 val input = "Mississippi"
 
 var charCounter = 0
-val charIndexes = Map[Char, Set[Int]]()
+val charIndexes = Map[Char, SortedSet[Int]]()
 
 for (c <- input) {
   if (charIndexes.contains(c)) {
     charIndexes(c) = charIndexes(c) + charCounter
   } else {
-    charIndexes += (c -> Set(charCounter))
+    charIndexes += (c -> SortedSet(charCounter))
   }
   charCounter += 1
 }
