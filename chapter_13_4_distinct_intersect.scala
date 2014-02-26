@@ -7,7 +7,7 @@ def distinctIntersect(values: Array[String], valueMap: Map[String, Int]) = {
       intersect = intersect + (c -> valueMap(c))
     }
   }
-  intersect
+  intersect.values
 }
 
 val Names = Array[String]("Tom", "Fred", "Harry")
@@ -18,7 +18,8 @@ println(distinctIntersect(Names, NameNumbers))
 
 
 def distInctersect(values: Array[String], valueMap: Map[String, Int]) = {
-  println(values.flatMap(valueMap.get(_)).mkString("(", ", ", ")"))
+  println(values.flatMap(valueMap.get).mkString("(", ", ", ")"))
+  println(values.map(valueMap.get).mkString("(", ", ", ")"))
 }
 
 distInctersect(Names, NameNumbers)
