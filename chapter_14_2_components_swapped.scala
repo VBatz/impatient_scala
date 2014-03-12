@@ -1,11 +1,11 @@
 
 def swap(pairOfInts: (Int, Int)) = {
-  println(pairOfInts)
-  var output = pairOfInts
   pairOfInts match {
-    case (x, y) => output = (y, x)
+    case (x, y) => (y, x)
   }
-  println(output)
 }
 
-swap((4,6))
+val input = (4, 6)
+println(input)
+
+println(swap(input))
